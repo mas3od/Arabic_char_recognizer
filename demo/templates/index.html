@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Page</title>
+    
+    <script  src="{% static 'js/Chart.js' %}" ></script>
+    <script type="module" src="{% static 'js/script.js' %}"></script> <!-- This is how to include a static file -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+</head>
+<body>
+    <div class='wrapper'>
+        <h1>Conv Neural Network</h1>
+        <p id='accuracy'></p>
+        <div class="choice">
+        <label for="algo">Choose an Algorithm</label>
+        <select name="algo" id="slct">
+            <option value=""> choose an option </option>
+            <option value="cnn1">Cnn (1)</option>
+            <option value="cnn2">Cnn (2) (with Global pooling)</option>
+            <option value="rnn">Rnn</option>
+            <option value="resnet">ResNet</option>
+        </select>    
+        </div>
+            <div id="container">
+                <div id="wrap">
+                    <h3> Write Here </h3>
+                        <canvas id="draw"></canvas>
+                        <br>
+                        <div class="btns">
+                            <button type="submit" id="btn"> Predict</button>
+                            <button  id="delete"> Reset </button>
+                        </div>
+                                
+                </div>
+                    
+                
+                
+                <div class="res">
+                        <h3>Result</h3>
+                        <div id="res"></div>
+
+                        <div class="btns">
+                        <button  id="correct"> Correct the answer </button>
+                    </div>
+                </div>
+                
+                <div id="mychart">
+                    <h3> Top 3 Characters</h3>
+                    <canvas id="chart" ></canvas></div>
+                   
+                
+                
+            </div>
+                
+        </div>
+
+</body>
+
+</html>
